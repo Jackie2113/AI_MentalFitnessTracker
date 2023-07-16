@@ -65,7 +65,20 @@ fig.show()
 fig = px.line(data, x='Year', y='MentalFitness', color='Country', markers=True)
 fig.show()
 
-fig=px.bar(data.head(30),x='Year',y='MentalFitness',color='Year',template='ggplot2')
+fig=px.bar(data.head(30),x='Year',y='MentalFitness',color='MentalFitness',template='ggplot2')
+fig.show()
+
+fig = px.bar(data, x='Country', y='BipolarDisorder', color='Year', barmode='group', template='plotly_dark')
+fig.update_layout(xaxis={'categoryorder':'total descending'})
+fig.show()
+
+fig = px.box(data, x='Year', y='EatingDisorder', color='Country', template='plotly_dark')
+fig.show()
+
+fig = px.histogram(data, x='Anxiety', color='Country', marginal='box', template='plotly_dark')
+fig.show()
+
+fig = px.scatter(data, x='Year', y='Depression', size='MentalFitness', color='Country', template='plotly_dark')
 fig.show()
 
 """# More Data Checking"""
